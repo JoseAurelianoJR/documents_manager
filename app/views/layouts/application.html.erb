@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DocumentsManager</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<% if person_signed_in? %>
+Logged User: <%= current_person.email%>
+<%= link_to "Sair", destroy_person_session_path, method: :delete%>
+<% end %>
+<%= yield %>
+
+</body>
+</html>
